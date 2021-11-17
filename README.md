@@ -1,6 +1,6 @@
 # POKEDEX
 
-### This is a sample app to show list and details of pokemons with local database
+### This is a sample Android app to show list and details of pokemons with local database
 
 Libs and features
 
