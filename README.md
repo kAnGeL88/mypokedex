@@ -12,7 +12,7 @@ Libs and features
 
  - [MVI] - Pattern 
 
- - [Clean Architecture] - Entities (without Domains), Views and States
+ - [Clean Architecture] - Entities, views and states
 
  - [Coroutines & Flow] For async
 
