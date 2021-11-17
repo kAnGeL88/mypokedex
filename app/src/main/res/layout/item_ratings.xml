@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/cl_rating_speed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:text="@string/hp"
+            android:id="@+id/tv_title_hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_hp"
+            app:layout_constraintEnd_toEndOf="@+id/progress_hp"
+            app:layout_constraintStart_toStartOf="@+id/progress_hp"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_hp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_hp"
+            app:layout_constraintEnd_toEndOf="@+id/progress_hp"
+            app:layout_constraintStart_toStartOf="@+id/progress_hp"
+            app:layout_constraintTop_toTopOf="@+id/progress_hp"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cl_rating_hp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_speed"
+            app:layout_constraintEnd_toEndOf="@+id/progress_speed"
+            app:layout_constraintStart_toStartOf="@+id/progress_speed"
+            android:text="@string/speed" />
+
+        <ProgressBar
+            android:id="@+id/progress_speed"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_speed"
+            app:layout_constraintEnd_toEndOf="@+id/progress_speed"
+            app:layout_constraintStart_toStartOf="@+id/progress_speed"
+            app:layout_constraintTop_toTopOf="@+id/progress_speed"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_rating_hp"
+        app:layout_constraintStart_toStartOf="@+id/cl_rating_hp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_rating_hp">
+
+        <TextView
+            android:id="@+id/tv_title_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_attack"
+            app:layout_constraintEnd_toEndOf="@+id/progress_attack"
+            app:layout_constraintStart_toStartOf="@+id/progress_attack"
+            android:text="@string/attack" />
+
+        <ProgressBar
+            android:id="@+id/progress_attack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_attack"
+            app:layout_constraintEnd_toEndOf="@+id/progress_attack"
+            app:layout_constraintStart_toStartOf="@+id/progress_attack"
+            app:layout_constraintTop_toTopOf="@+id/progress_attack"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_rating_speed"
+        app:layout_constraintStart_toStartOf="@+id/cl_rating_speed"
+        app:layout_constraintTop_toBottomOf="@+id/cl_rating_speed">
+
+        <TextView
+            android:id="@+id/tv_title_defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_defense"
+            app:layout_constraintEnd_toEndOf="@+id/progress_defense"
+            app:layout_constraintStart_toStartOf="@+id/progress_defense"
+            android:text="@string/defense" />
+
+        <ProgressBar
+            android:id="@+id/progress_defense"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_defense"
+            app:layout_constraintEnd_toEndOf="@+id/progress_defense"
+            app:layout_constraintStart_toStartOf="@+id/progress_defense"
+            app:layout_constraintTop_toTopOf="@+id/progress_defense"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_super_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_rating_attack"
+        app:layout_constraintStart_toStartOf="@+id/cl_rating_attack"
+        app:layout_constraintTop_toBottomOf="@+id/cl_rating_attack">
+
+        <TextView
+            android:id="@+id/tv_title_super_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_super_attack"
+            app:layout_constraintEnd_toEndOf="@+id/progress_super_attack"
+            app:layout_constraintStart_toStartOf="@+id/progress_super_attack"
+            android:text="@string/super_attack" />
+
+        <ProgressBar
+            android:id="@+id/progress_super_attack"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_super_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_super_attack"
+            app:layout_constraintEnd_toEndOf="@+id/progress_super_attack"
+            app:layout_constraintStart_toStartOf="@+id/progress_super_attack"
+            app:layout_constraintTop_toTopOf="@+id/progress_super_attack"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_rating_super_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/cl_rating_defense"
+        app:layout_constraintStart_toStartOf="@+id/cl_rating_defense"
+        app:layout_constraintTop_toBottomOf="@+id/cl_rating_defense">
+
+        <TextView
+            android:id="@+id/tv_title_super_defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_super_defense"
+            app:layout_constraintEnd_toEndOf="@+id/progress_super_defense"
+            app:layout_constraintStart_toStartOf="@+id/progress_super_defense"
+            android:text="@string/super_defense" />
+
+        <ProgressBar
+            android:id="@+id/progress_super_defense"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_custom_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:progress="40" />
+
+        <TextView
+            android:id="@+id/tv_ratings_super_defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arcade"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_super_defense"
+            app:layout_constraintEnd_toEndOf="@+id/progress_super_defense"
+            app:layout_constraintStart_toStartOf="@+id/progress_super_defense"
+            app:layout_constraintTop_toTopOf="@+id/progress_super_defense"
+            tools:text="40" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

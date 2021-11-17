@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.deloitte.pokedex"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+dependencies {
+
+    /*injection*/
+    implementation 'javax.inject:javax.inject:1'
+
+    /*retrofit*/
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    /*koin*/
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+
+    /*pagination*/
+    //I must use this old lib because the new lib not work correctly
+    //noinspection GradleDependency
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha02"
+
+    /*uniflow*/
+    implementation "org.uniflow-kt:uniflow-core:$uniflow_version"
+    implementation "org.uniflow-kt:uniflow-android:$uniflow_version"
+    implementation "org.uniflow-kt:uniflow-saferesult:$uniflow_version"
+    implementation "org.uniflow-kt:uniflow-arrow:$uniflow_version"
+    testImplementation "org.uniflow-kt:uniflow-android-test:$uniflow_version"
+    testImplementation "org.uniflow-kt:uniflow-test:$uniflow_version"
+
+    /*moshi*/
+    implementation "com.squareup.moshi:moshi:1.12.0"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    
+    /*palette*/
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+
+    /*glide*/
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    /*swiperefreshlayout*/
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    /*hawk*/
+    implementation "com.orhanobut:hawk:2.0.1"
+
+    /*room*/
+    implementation"androidx.room:room-runtime:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
+    annotationProcessor"androidx.room:room-compiler:2.3.0"
+    kapt"androidx.room:room-compiler:2.3.0"
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.5.31'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+}
