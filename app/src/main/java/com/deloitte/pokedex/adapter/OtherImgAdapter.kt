@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 import com.deloitte.pokedex.databinding.ItemImageBinding
+import com.deloitte.pokedex.domain.PokemonSpite
 import com.deloitte.pokedex.util.getProgressDrawable
 import com.deloitte.pokedex.util.loadImage
 
-class OtherImgAdapter(val url: List<String>) :
+class OtherImgAdapter(val url: List<PokemonSpite>) :
     RecyclerView.Adapter<OtherImgAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OtherImgAdapter.ImageViewHolder {
@@ -35,13 +36,15 @@ class OtherImgAdapter(val url: List<String>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(position: Int) {
-            val imageUrl = url[position]
+            val imageUrl = url[position].url
 
             binding.ivPokemon.loadImage(
                 imageUrl,
                 getProgressDrawable(binding.root.context),
                 50
             )
+
+            binding.tvImgType.text = url[position].type
 
         }
     }

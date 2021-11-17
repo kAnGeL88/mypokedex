@@ -10,7 +10,7 @@
     <string name="defense">Defense</string>
     <string name="super_attack">Special Attack</string>
     <string name="super_defense">Special Defense</string>
-    <string name="cm">cm</string>
+    <string name="m">m</string>
     <string name="kg">kg</string>
     <string name="types">Types</string>
     <string name="retry">Retry</string>

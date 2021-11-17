@@ -3,12 +3,12 @@ package com.deloitte.pokedex.activity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deloitte.pokedex.R
 import com.deloitte.pokedex.adapter.OtherImgAdapter
 import com.deloitte.pokedex.databinding.ActivityPokemonDetailsBinding
+import com.deloitte.pokedex.domain.PokemonSpite
 import com.deloitte.pokedex.entity.PokemonBaseDetails
 import com.deloitte.pokedex.util.*
 
@@ -31,20 +31,18 @@ class DetailsActivity : AppCompatActivity() {
                 super.onBackPressed()
             }
 
+            val pokemonSpriteList = mutableListOf<PokemonSpite>()
 
-            val imageUrlList = mutableListOf<String>()
+            pokemonDetails?.sprites?.frontDefault?.let { pokemonSpriteList.add(PokemonSpite(FRONT_DEFAULT,it)) }
+            pokemonDetails?.sprites?.backDefault?.let  { pokemonSpriteList.add(PokemonSpite(BACK_DEFAULT,it)) }
+            pokemonDetails?.sprites?.frontFemale?.let  { pokemonSpriteList.add(PokemonSpite(FRONT_FEMALE,it)) }
+            pokemonDetails?.sprites?.backFemale?.let { pokemonSpriteList.add(PokemonSpite(BACK_FEMALE,it)) }
+            pokemonDetails?.sprites?.frontShiny?.let { pokemonSpriteList.add(PokemonSpite(FRONT_SHINY,it)) }
+            pokemonDetails?.sprites?.backShiny?.let { pokemonSpriteList.add(PokemonSpite(BACK_SHINY,it)) }
+            pokemonDetails?.sprites?.frontShinyFemale?.let  { pokemonSpriteList.add(PokemonSpite(FRONT_FEMALE,it)) }
+            pokemonDetails?.sprites?.backShinyFemale?.let { pokemonSpriteList.add(PokemonSpite(BACK_SHINY_FEMALE,it)) }
 
-
-            pokemonDetails?.sprites?.frontDefault?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.backDefault?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.frontFemale?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.backFemale?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.frontShiny?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.backShiny?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.frontShinyFemale?.let { imageUrlList.add(it) }
-            pokemonDetails?.sprites?.backShinyFemale?.let { imageUrlList.add(it) }
-
-            initRecyclerView (imageUrlList)
+            initRecyclerView (pokemonSpriteList)
 
             val picture = getPicById(pokemonDetails?.id?:0)
 
@@ -60,8 +58,8 @@ class DetailsActivity : AppCompatActivity() {
 
             binding.tvPokemonName.text =  pokemonDetails?.name
 
-            binding.tvWeight.text = "${pokemonDetails?.weight?.toHumanFormat()} ${getString(R.string.cm)}"
-            binding.tvHeight.text = "${pokemonDetails?.height?.toHumanFormat()} ${getString(R.string.kg)}"
+            binding.tvWeight.text = "${pokemonDetails?.weight?.toHumanFormat()} ${getString(R.string.kg)}"
+            binding.tvHeight.text = "${pokemonDetails?.height?.toHumanFormat()} ${getString(R.string.m)}"
 
             binding.ratings.progressHp.animateStats(pokemonDetails?.stats?.first { it.stat.name == HP }?.baseStat?:0)
             binding.ratings.progressSpeed.animateStats(pokemonDetails?.stats?.first { it.stat.name == SPEED }?.baseStat?:0)
@@ -79,7 +77,7 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun initRecyclerView(imageUrlList: MutableList<String>) {
+    private fun initRecyclerView(imageUrlList: MutableList<PokemonSpite>) {
 
         otherImgAdapter = OtherImgAdapter(imageUrlList)
         binding.rvImages.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)

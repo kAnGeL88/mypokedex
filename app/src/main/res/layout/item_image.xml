@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_iv_container"
@@ -29,10 +30,22 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/preview"
                 android:scaleType="centerCrop"
-                android:src="@drawable/not_found" />
+                android:src="@drawable/ic_pokeball" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tv_img_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/arcade"
+        tools:text="sprite_type"
+        app:layout_constraintEnd_toEndOf="@+id/cv_iv_container"
+        app:layout_constraintStart_toStartOf="@+id/cv_iv_container"
+        app:layout_constraintTop_toBottomOf="@+id/cv_iv_container" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
